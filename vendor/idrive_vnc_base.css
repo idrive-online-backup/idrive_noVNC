@@ -1,0 +1,85 @@
+* {
+	box-sizing: border-box;
+}
+
+
+html {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+#top_bar {
+  background-color: #0071bc;
+  color: #fff;
+  font: 700 12px Helvetica;
+  padding: 10px 5px;
+  border-bottom: none;
+  position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+#status {
+  text-align: center;
+  font-size: 14px;
+}
+
+#sendCtrlAltDelButton {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  width: auto;
+  float: right;
+  border: none;
+  background: #fff;
+  color: #0071bc;
+  border-radius: 2px
+}
+
+#sendClipBoard {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  width: auto;
+  float: right;
+  border: none;
+  background: #fff;
+  color: #0071bc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+#screen {
+  flex: 1;
+  /* fill remaining space */
+  overflow: hidden
+}
+
+#canvasCtnr {
+  display:flex;
+  width:100%;
+  height: calc(100vh - 56px);
+  overflow:auto;
+  background:#000 !important;
+}
+
+#canvasArea {
+  outline:none;
+  flex-shrink:0;
+  width:1024px;
+  height:768px;
+  cursor:default !important;
+}

@@ -18,47 +18,10 @@
 
     <meta charset="utf-8">
 
-    <style>
-
-        body {
-            margin: 0;
-            background-color: dimgrey;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        html {
-            height: 100%;
-        }
-
-        #top_bar {
-            background-color: #6e84a3;
-            color: white;
-            font: bold 12px Helvetica;
-            padding: 6px 5px 4px 5px;
-            border-bottom: 1px outset;
-        }
-        #status {
-            text-align: center;
-        }
-        #sendCtrlAltDelButton {
-            position: fixed;
-            top: 0px;
-            right: 0px;
-            border: 1px outset;
-            padding: 5px 5px 4px 5px;
-            cursor: pointer;
-        }
-
-        #screen {
-            flex: 1; /* fill remaining space */
-            overflow: hidden;
-        }
-
-    </style>
-
     <!-- Promise polyfill for IE11 -->
     <script src="vendor/promise.js"></script>
+    <link rel="icon" href="https://www.idrivecompute.com/webapp/images/favicon.ico" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="vendor/idrive_vnc_base.css">
 
     <!-- ES2015/ES6 modules polyfill -->
     <script type="module">
@@ -81,11 +44,19 @@
 
         let rfb;
         let desktopName;
+        let screen_div;
+        let screen_canvas;
 
         // When this function is called we have
         // successfully connected to a server
         function connectedToServer(e) {
             status("Connected to " + desktopName);
+            screen_div = rfb._screen;
+            screen_div.id = "canvasCtnr";
+            screen_canvas = rfb._screen.firstChild
+            screen_canvas.id = 'canvasArea';
+            screen_canvas.style.margin = null;
+            rfb.focus();
         }
 
         // This function is called when we are disconnected
