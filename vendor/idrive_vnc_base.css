@@ -68,7 +68,7 @@ body {
   overflow: hidden
 }
 
-#canvasCtnr {
+#screen > div:first-child {
   display:flex;
   width:100%;
   height: calc(100vh - 56px);
@@ -76,10 +76,11 @@ body {
   background:#000 !important;
 }
 
-#canvasArea {
+#screen > div > canvas:first-child {
   outline:none;
   flex-shrink:0;
   width:1024px;
   height:768px;
   cursor:default !important;
+  margin: 0 !important;
 }

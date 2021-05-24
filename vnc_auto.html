@@ -44,18 +44,11 @@
 
         let rfb;
         let desktopName;
-        let screen_div;
-        let screen_canvas;
 
         // When this function is called we have
         // successfully connected to a server
         function connectedToServer(e) {
             status("Connected to " + desktopName);
-            screen_div = rfb._screen;
-            screen_div.id = "canvasCtnr";
-            screen_canvas = rfb._screen.firstChild
-            screen_canvas.id = 'canvasArea';
-            screen_canvas.style.margin = null;
             rfb.focus();
         }
 
