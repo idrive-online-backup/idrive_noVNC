@@ -17,7 +17,7 @@ function handleConnect() {
   body.style.minWidth = width + 'px';
   body.style.minHeight = height + 'px';
   body.style.overflow = 'auto';
-  body.style.position = 'relavtive';
+  body.style.position = 'relative';
 
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get('title');
