@@ -20,6 +20,6 @@ function handleConnect() {
   body.style.position = 'relative';
 
   const urlParams = new URLSearchParams(window.location.search);
-  const myParam = urlParams.get('title');
+  const myParam = urlParams.get('name');
   document.title = myParam;
 }
