@@ -5,21 +5,40 @@
 function handleConnect() {
   var canvas = document.getElementsByTagName('canvas')[0];
   canvas.focus();
+  canvas.style.paddingLeft = '10px';
+
   var height = canvas.scrollHeight;
   var width  = canvas.scrollWidth;
 
+  var winHeight = window.innerHeight;
+  var winWidth = window.innerWidth;
+
   var topBar = document.getElementById('top_bar');
-  topBar.style.minWidth = width + 'px';
+  if ( winWidth > width ) {
+    topBar.style.minWidth = width + 'px';
+  } else {
+    topBar.style.minWidth = winWidth + 'px';
+  }
   topBar.style.position = 'absolute';
   topBar.style.bottom = 0;
 
   var body = document.getElementsByTagName('body')[0];
-  body.style.minWidth = width + 'px';
-  body.style.minHeight = height + 'px';
+  if ( winWidth > width ) {
+    body.style.minWidth = width + 'px';
+  } else {
+    body.style.minWidth = winWidth + 'px';
+  }
+  if( winHeight > height ) {
+    body.style.minHeight = height + 'px';
+  } else {
+    body.style.minHeight = winHeight + 'px';
+  }
   body.style.overflow = 'auto';
   body.style.position = 'relative';
 
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get('name');
-  document.title = myParam;
+  if ( myParam !== null && myParam.length > 0) {
+    document.getElementById('status').textContent = "Connected to - " + myParam;
+  }
 }
