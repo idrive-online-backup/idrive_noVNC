@@ -5,7 +5,6 @@
 function handleConnect() {
   var canvas = document.getElementsByTagName('canvas')[0];
   canvas.focus();
-  canvas.style.paddingLeft = '10px';
 
   var height = canvas.scrollHeight;
   var width  = canvas.scrollWidth;
