@@ -18,8 +18,6 @@ function handleConnect() {
   } else {
     topBar.style.minWidth = winWidth + 'px';
   }
-  topBar.style.position = 'absolute';
-  topBar.style.bottom = 0;
 
   var body = document.getElementsByTagName('body')[0];
   if ( winWidth > width ) {
@@ -32,8 +30,6 @@ function handleConnect() {
   } else {
     body.style.minHeight = winHeight + 'px';
   }
-  body.style.overflow = 'auto';
-  body.style.position = 'relative';
 
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get('name');
