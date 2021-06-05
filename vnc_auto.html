@@ -22,6 +22,7 @@
     <script src="vendor/promise.js"></script>
     <link rel="icon" href="https://www.idrivecompute.com/webapp/images/favicon.ico" sizes="16x16">
     <link rel="stylesheet" type="text/css" href="vendor/idrive_vnc_base.css">
+    <script src="vendor/idrive_vnc.js"></script>
 
     <!-- ES2015/ES6 modules polyfill -->
     <script type="module">
@@ -49,7 +50,7 @@
         // successfully connected to a server
         function connectedToServer(e) {
             status("Connected to " + desktopName);
-            rfb.focus();
+            handleConnect();
         }
 
         // This function is called when we are disconnected

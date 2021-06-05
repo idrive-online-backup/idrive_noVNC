@@ -14,6 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  overflow: auto;
+  position: relative;
 }
 
 #top_bar {
@@ -22,7 +24,7 @@ body {
   font: 700 12px Helvetica;
   padding: 10px 5px;
   border-bottom: none;
-  position: fixed;
+  position: absolute;
 	width: 100%;
 	bottom: 0;
 	left: 0;
@@ -68,4 +70,6 @@ body {
   height:768px;
   cursor:default !important;
   margin: 0 !important;
+  padding-left: 10px;
 }
+
