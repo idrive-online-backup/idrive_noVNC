@@ -49,6 +49,21 @@ body {
   border-radius: 2px
 }
 
+#sendClipboardButton {
+  position: absolute;
+  top: 5px;
+  right: 120px;
+  padding: 5px;
+  cursor: pointer;
+  width: auto;
+  float: right;
+  border: none;
+  background: #fff;
+  color: #0071bc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
 #screen {
   flex: 1;
   /* fill remaining space */

@@ -151,6 +151,9 @@
         // Set parameters that can be changed on an active connection
         rfb.viewOnly = readQueryVariable('view_only', false);
         rfb.scaleViewport = readQueryVariable('scale', false);
+        if (myRFB == null) {
+            myRFB = rfb;
+        }
     </script>
 </head>
 
@@ -158,6 +161,7 @@
     <div id="top_bar">
         <div id="status">Loading</div>
         <div id="sendCtrlAltDelButton">Send CtrlAltDel</div>
+        <div id="sendClipboardButton">Send Clipboard</div>
     </div>
     <div id="screen">
         <!-- This is where the remote screen will appear -->
