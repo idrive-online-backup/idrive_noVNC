@@ -45,7 +45,7 @@ function handleConnect() {
     if (!window.isSecureContext) {
       return;
     }
-    if (myRFB === null) {
+    if (null === myRFB) {
       return;
     }
     navigator.permissions.query({name: 'clipboard-read'}).then(result => {
