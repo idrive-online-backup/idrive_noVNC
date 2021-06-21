@@ -3,6 +3,8 @@
 */
 
 var myRFB = null;
+const enterKeyCode = 0xff0d;
+const shiftKeyCode = 0xffe1;
 
 function handleConnect() {
   var canvas = document.getElementsByTagName('canvas')[0];
@@ -40,7 +42,7 @@ function handleConnect() {
   }
 
   // Handle Clipboard Paste
-  let clipboardButton = document.getElementById('sendClipboardButton');
+  let clipboardButton = document.getElementById('getClipboardButton');
   clipboardButton.addEventListener("click", function() {
     if (!window.isSecureContext || null === myRFB) {
       return;
@@ -63,14 +65,14 @@ function handleConnect() {
     let char_code = char.charCodeAt();
 
     if ("\n" === char) {
-      myRFB.sendKey(0xff0d,0xff0d,true);
-      myRFB.sendKey(0xff0d,0xff0d,false);
+      myRFB.sendKey(enterKeyCode,enterKeyCode,true);
+      myRFB.sendKey(enterKeyCode,enterKeyCode,false);
     } else {
       if (char.match(/[A-Z!@#$%^&*()_+{}:"<>?~|]/)) {
-        myRFB.sendKey(0xffe1,0xffe1,true);
+        myRFB.sendKey(shiftKeyCode,shiftKeyCode,true);
         myRFB.sendKey(char_code,char_code,true);
         myRFB.sendKey(char_code,char_code,false);
-        myRFB.sendKey(0xffe1,0xffe1,false);
+        myRFB.sendKey(shiftKeyCode,shiftKeyCode,false);
       } else {
         myRFB.sendKey(char_code,char_code,true);
         myRFB.sendKey(char_code,char_code,false);
