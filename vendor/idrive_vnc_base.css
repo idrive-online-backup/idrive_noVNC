@@ -2,74 +2,119 @@
 	box-sizing: border-box;
 }
 
-
 html {
-  height: 100%
+	height: 100%
 }
 
 body {
-  margin: 0;
-  background-color: #000;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  overflow: auto;
-  position: relative;
+	margin: 0;
+	background-color: #000;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	overflow: auto;
+	position: relative;
 }
 
 #top_bar {
-  background-color: #0071bc;
-  color: #fff;
-  font: 700 12px Helvetica;
-  padding: 10px 5px;
-  border-bottom: none;
-  position: absolute;
+	background-color: #0071bc;
+	color: #fff;
+	font: 700 12px Helvetica;
+	padding: 20px 5px;
+	border-bottom: none;
+	position: absolute;
 	width: 100%;
 	bottom: 0;
 	left: 0;
 }
 
 #status {
-  text-align: center;
-  font-size: 14px;
+	text-align: center;
+	font-size: 14px;
+	width: calc(100% - 340px);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 #sendCtrlAltDelButton {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  padding: 5px;
-  cursor: pointer;
-  width: auto;
-  float: right;
-  border: none;
-  background: #fff;
-  color: #0071bc;
-  border-radius: 2px
+	position: absolute;
+	top: 11px;
+	right: 10px;
+	padding: 10px 10px 10px 37px;
+	cursor: pointer;
+	width: auto;
+	float: right;
+	border: none;
+	background: #fff;
+	color: #0071bc;
+	border-radius: 2px;
+	box-sizing: border-box;
+}
+
+#sendCtrlAltDelButton::after {
+	position: absolute;
+	content: '';
+	left: 8px;
+	top: 4px;
+	width: 23px;
+	height: 24px;
+	background: url(https://www.idrivecompute.com/webapp/images/vnc-sprite.png) no-repeat;
+	background-position: 1px -46px;
+}
+
+#getClipboardButton {
+	position: absolute;
+	top: 11px;
+	right: 180px;
+	padding: 10px 10px 10px 32px;
+	cursor: pointer;
+	width: auto;
+	float: right;
+	border: none;
+	background: #fff;
+	color: #0071bc;
+	border-radius: 2px;
+	box-sizing: border-box;
+}
+
+#getClipboardButton::after {
+	position: absolute;
+	content: '';
+	left: 9px;
+	top: 3px;
+	width: 20px;
+	height: 24px;
+	background: url(https://www.idrivecompute.com/webapp/images/vnc-sprite.png) no-repeat;
+	background-position: 0px 4px;
+}
+
+#getClipboardButton:hover,
+#sendCtrlAltDelButton:hover {
+	background: #e7f4fa;
 }
 
 #screen {
-  flex: 1;
-  /* fill remaining space */
-  overflow: hidden
+	flex: 1;
+	/* fill remaining space */
+	overflow: hidden
 }
 
-#screen > div:first-child {
-  display:flex;
-  width:100%;
-  height: calc(100% - 36px) !important;
-  overflow:auto;
-  background:#000 !important;
+#screen>div:first-child {
+	display: flex;
+	width: 100%;
+	height: calc(100% - 56px) !important;
+	overflow: auto;
+	background: #000 !important;
 }
 
-#screen > div > canvas:first-child {
-  outline:none;
-  flex-shrink:0;
-  width:1024px;
-  height:768px;
-  cursor:default !important;
-  margin: 0 !important;
-  padding-left: 10px;
+#screen>div>canvas:first-child {
+	outline: none;
+	flex-shrink: 0;
+	width: 1024px;
+	height: 768px;
+	cursor: default !important;
+	margin: 0 !important;
+	padding-left: 10px;
 }
-
