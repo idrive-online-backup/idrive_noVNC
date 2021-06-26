@@ -48,53 +48,36 @@ body {
 	color: #0071bc;
 	border-radius: 2px;
 	box-sizing: border-box;
-	background: url(../images/vnc-sprite.png) no-repeat;
+	background: url(https://www.idrivecompute.com/webapp/images/vnc-sprite.png) no-repeat;
 	background-position: 1px -80px;
 	width: 26px;
 	height: 26px;
 	font-size: 0;
 }
 
-#sendCtrlAltDelButton::after {
-	position: absolute;
-	content: '';
-	left: 8px;
-	top: 4px;
-	width: 23px;
-	height: 24px;
-	background: url(https://www.idrivecompute.com/webapp/images/vnc-sprite.png) no-repeat;
-	background-position: 1px -46px;
-}
-
 #sendClipboardButton {
 	position: absolute;
-	top: 11px;
-	right: 180px;
-	padding: 10px 10px 10px 32px;
+	top: 13px;
+	right: 110px;
+	padding: 0;
 	cursor: pointer;
 	width: auto;
 	float: right;
 	border: none;
-	background: #fff;
 	color: #0071bc;
 	border-radius: 2px;
 	box-sizing: border-box;
-}
-
-#sendClipboardButton::after {
-	position: absolute;
-	content: '';
-	left: 9px;
-	top: 3px;
-	width: 20px;
-	height: 24px;
+	font-size: 0;
+	background: transparent;
+	width: 26px;
+	height: 30px;
 	background: url(https://www.idrivecompute.com/webapp/images/vnc-sprite.png) no-repeat;
 	background-position: 0px 4px;
 }
 
 #sendClipboardButton:hover,
 #sendCtrlAltDelButton:hover {
-	background: #e7f4fa;
+	opacity: 0.6
 }
 
 #screen {
