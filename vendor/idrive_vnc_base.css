@@ -3,7 +3,7 @@
 }
 
 html {
-	height: 100%
+	height: 100%;
 }
 
 body {
@@ -13,17 +13,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
-	overflow: auto;
-	position: relative;
 }
 
 #top_bar {
 	background-color: #0071bc;
-	color: #fff;
-	font: 700 12px Helvetica;
+	color: white;
+	font: bold 12px Helvetica;
 	padding: 20px 5px;
 	border-bottom: none;
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	bottom: 0;
 	left: 0;
@@ -32,7 +30,7 @@ body {
 #status {
 	text-align: center;
 	font-size: 14px;
-	width: calc(100% - 340px);
+	width: calc(100% - 84px);
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -40,17 +38,21 @@ body {
 
 #sendCtrlAltDelButton {
 	position: absolute;
-	top: 11px;
-	right: 10px;
-	padding: 10px 10px 10px 37px;
+	top: 17px;
+	right: 50px;
+	padding: 10px 10px 10px 10px;
 	cursor: pointer;
 	width: auto;
 	float: right;
 	border: none;
-	background: #fff;
 	color: #0071bc;
 	border-radius: 2px;
 	box-sizing: border-box;
+	background: url(../images/vnc-sprite.png) no-repeat;
+	background-position: 1px -80px;
+	width: 26px;
+	height: 26px;
+	font-size: 0;
 }
 
 #sendCtrlAltDelButton::after {
@@ -64,7 +66,7 @@ body {
 	background-position: 1px -46px;
 }
 
-#getClipboardButton {
+#sendClipboardButton {
 	position: absolute;
 	top: 11px;
 	right: 180px;
@@ -79,7 +81,7 @@ body {
 	box-sizing: border-box;
 }
 
-#getClipboardButton::after {
+#sendClipboardButton::after {
 	position: absolute;
 	content: '';
 	left: 9px;
@@ -90,7 +92,7 @@ body {
 	background-position: 0px 4px;
 }
 
-#getClipboardButton:hover,
+#sendClipboardButton:hover,
 #sendCtrlAltDelButton:hover {
 	background: #e7f4fa;
 }
