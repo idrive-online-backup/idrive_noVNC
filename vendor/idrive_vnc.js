@@ -42,7 +42,7 @@ function handleConnect() {
   }
 
   // Handle Clipboard Paste
-  let clipboardButton = document.getElementById('getClipboardButton');
+  let clipboardButton = document.getElementById('sendClipboardButton');
   clipboardButton.addEventListener("click", function() {
     if (!window.isSecureContext || null === myRFB) {
       return;
