@@ -53,6 +53,7 @@ function handleConnect() {
         navigator.clipboard.readText().then(text => {
           if (text.length > 0) {
             sendClipBoardTextToConsole(text);
+            canvas.focus();
           }
         });
       }
